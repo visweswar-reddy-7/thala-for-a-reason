@@ -1,0 +1,34 @@
+.App {
+  text-align: center;
+  padding: 100px;
+  background-color: rgb(241, 245, 248);
+  position: relative;
+  margin: 3% 30%;
+  border-radius: 10%;
+  box-shadow: rgb(128, 116, 116) 7px -7px 7px -7px;
+}
+#thala {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
+  padding: 10px;
+}
+
+#button {
+  display: flex;
+  margin: 10px auto;
+  border-radius: 10%;
+}
+
+#button:hover {
+  background-color: rgb(126, 202, 202);
+}
+
+#dhoni, #sorry {
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
