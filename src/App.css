@@ -3,9 +3,16 @@
   padding: 100px;
   background-color: rgb(241, 245, 248);
   position: relative;
-  margin: 3% 30%;
+  margin: 3%;
   border-radius: 10%;
   box-shadow: rgb(128, 116, 116) 7px -7px 7px -7px;
+}
+
+@media screen and (min-width: 768px) {
+  .App {
+    margin: 3% 30%;
+    box-shadow: rgb(128,116,116) 7px -7px 7px -7px;
+  }
 }
 #thala {
   display: flex;
