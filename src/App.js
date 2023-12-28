@@ -19,19 +19,19 @@ function App() {
   };
   const dhoniGifurl = process.env.PUBLIC_URL + '/Thala-success.gif';
   const sorryGifurl = process.env.PUBLIC_URL + '/sorry.gif';
-  
+
 
   return (
     <div className="App">
-      <form onSubmit = {handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <label id="thala">Thala for a reason</label>
         <label id="valueEnter">Enter the value :
-        <input type="text" value={inputValue} onChange={handleChange} />
+          <input type="text" value={inputValue} onChange={handleChange} />
         </label>
         <button type='submit' id='button'>Submit</button>
         {
-          submitValue && (submitValue.length === 7 || calculate(submitValue) === 7) ?
-          (<img id="dhoni" src={dhoniGifurl} alt="Dhoni" />) : submitValue && submitValue !== 0 ? (<img id="sorry" src={sorryGifurl} alt="Dhoni" />) : null
+          submitValue && (submitValue.length === 7 || submitValue.toLocaleLowerCase() === "seven" || calculate(submitValue) === 7) ?
+            (<img id="dhoni" src={dhoniGifurl} alt="Dhoni" />) : submitValue && submitValue !== 0 ? (<img id="sorry" src={sorryGifurl} alt="Dhoni" />) : null
         }
       </form>
     </div>
