@@ -20,6 +20,15 @@ function App() {
   const dhoniGifurl = process.env.PUBLIC_URL + '/Thala-success.gif';
   const sorryGifurl = process.env.PUBLIC_URL + '/sorry.gif';
 
+  const isDhoni = () => submitValue?. (
+    submitValue.length === 7 ||
+    submitValue.toLocaleLowerCase() === "seven" ||
+    submitValue.toLocaleLowerCase() === "msd" ||
+    submitValue.toLocaleLowerCase() === "dhoni" ||
+    submitValue.toLocaleLowerCase() === "mahi" ||
+    submitValue.toLocaleLowerCase() === "mahendra singh dhoni" ||
+    calculate(submitValue) === 7
+  );
 
   return (
     <div className="App">
@@ -30,8 +39,8 @@ function App() {
         </label>
         <button type='submit' id='button'>Submit</button>
         {
-          submitValue && (submitValue.length === 7 || submitValue.toLocaleLowerCase() === "seven" || calculate(submitValue) === 7) ?
-            (<img id="dhoni" src={dhoniGifurl} alt="Dhoni" />) : submitValue && submitValue !== 0 ? (<img id="sorry" src={sorryGifurl} alt="Dhoni" />) : null
+          isDhoni() ? (<img id="dhoni" src={dhoniGifurl} alt="Dhoni" />)
+            : submitValue !== 0 ? (<img id="sorry" src={sorryGifurl} alt="Sorry" />) : null
         }
       </form>
     </div>
