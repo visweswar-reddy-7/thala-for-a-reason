@@ -20,7 +20,7 @@ function App() {
   const dhoniGifurl = process.env.PUBLIC_URL + '/Thala-success.gif';
   const sorryGifurl = process.env.PUBLIC_URL + '/sorry.gif';
 
-  const isDhoni = () => submitValue?. (
+  const isDhoni = () => submitValue && (
     submitValue.length === 7 ||
     submitValue.toLocaleLowerCase() === "seven" ||
     submitValue.toLocaleLowerCase() === "msd" ||
@@ -40,7 +40,7 @@ function App() {
         <button type='submit' id='button'>Submit</button>
         {
           isDhoni() ? (<img id="dhoni" src={dhoniGifurl} alt="Dhoni" />)
-            : submitValue !== 0 ? (<img id="sorry" src={sorryGifurl} alt="Sorry" />) : null
+            : submitValue && submitValue !== 0 ? (<img id="sorry" src={sorryGifurl} alt="Sorry" />) : null
         }
       </form>
     </div>
